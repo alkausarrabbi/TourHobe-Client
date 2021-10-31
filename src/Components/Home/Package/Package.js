@@ -8,10 +8,10 @@ const Package = (props) => {
     const {_id,name,img,price,description}=props.pack;
     return (
         <div className="col-lg-4 ">
-            <Card className="Packages" style={{ maxWidth: '22rem', height:"30rem" }}>
+            <Card className="Packages" style={{ maxWidth: '22rem', height:"32rem" }}>
         <Card.Img variant="top" src={img}/>
         <Card.Body>
-          <Card.Title>{name}</Card.Title>
+          <Card.Title><h4>{name}</h4></Card.Title>
           <Card.Text>
             <b>Description</b> : {description.substring(0,100)}
           </Card.Text>

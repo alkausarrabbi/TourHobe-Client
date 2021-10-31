@@ -57,14 +57,14 @@ const Details = () => {
     return (
         <div className="container mt-5 mb-5">
             <div className="row">
-            <div className="col-lg-6 col-sm-12">
+            <div className="col-lg-6 col-sm-12 mb-5">
               <h6>Tour Package-Id:{id}</h6>
                <h1>{detail.name}</h1>
                 <img src={detail.img} alt="" className="h-50 w-50" />
                 <h5 className="mt-2 text-danger">Description</h5>
                 <p>{detail.description}</p>
            </div>
-           <div className="col-lg-6 col-sm-12">
+           <div className="col-lg-6 col-sm-12 mt-5">
                <h1 className="text-info">Book Now</h1>
                <div>
                <form onSubmit={handleBooking} action="" className="d-flex flex-column justify-content-center p-2">
