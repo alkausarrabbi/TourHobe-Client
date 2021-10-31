@@ -23,7 +23,7 @@ const AddPackages = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('Successfully added the user.')
+                    alert('Successfully added the package.')
                     e.target.reset();
                 }
             })
@@ -37,14 +37,18 @@ const AddPackages = () => {
             <div className="col-lg-6 col-sm-12">
               <img src={img} alt="" className="img-fluid" />
            </div>
-           <div className="col-lg-6 col-sm-12">
+           <div className="col-lg-6 col-sm-12 mt-2">
                <h1 className="text-info">Add Package</h1>
                <div>
-               <form onSubmit={handleAddPack} action="" className="d-flex flex-column justify-content-center p-2">
-                   <input type="text" ref={nameRef} placeholder="Place name" />
-                   <input type="text" ref={desRef}  placeholder="Description"/>
-                   <input type="text" ref={urlRef}  placeholder="Input Place URL"/>
-                   <input type="number" ref={priceRef}  placeholder="Price" />
+               <form onSubmit={handleAddPack} action="" className="d-flex flex-column justify-content-center mt-2 p-2">
+                   <input type="text" ref={nameRef} placeholder="Place name" required />
+                   <br />
+                   <input type="text" ref={desRef}  placeholder="Description" required />
+                   <br />
+                   <input type="text" ref={urlRef}  placeholder="Input Place URL" required />
+                   <br />
+                   <input type="number" ref={priceRef}  placeholder="Price" required  />
+                   <br />
                   <input type="submit"  value="submit" />
                </form>
                </div>

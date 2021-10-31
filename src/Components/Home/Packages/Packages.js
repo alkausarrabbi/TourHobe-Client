@@ -20,8 +20,8 @@ const Packages = () => {
                 <h1>Current Hot Packages</h1>
             </div>
             
-                <div className="container mb-5 d-flex align-items-center justify-content-center">
-                <div className="row gy-4 mx-auto">
+                <div className="container mb-5 d-flex align-items-center justify-content-center ">
+                <div className="row gy-4 mx-auto ps-3 ">
                 {
                 packages.map(pack =><Package Key={pack._id} pack={pack} ></Package>)
                 } 

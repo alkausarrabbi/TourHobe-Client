@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import "./UserBooking.css"
+import Button from 'react-bootstrap/Button';
 
 const UserBooking = (props) => {
     const {Productname,ProductId, Productprice,_id,order}=props.book;
@@ -14,39 +15,23 @@ const UserBooking = (props) => {
                 .then(res => res.json())
                 .then(data => {  
                     if (data.deletedCount > 0) {
-                        alert('deleted successfully');
+                        alert('successfully deleted');
                         window.location.reload(false)
                     }
                 });
         }
     }
-    const handleConfirm=id=>{
-        const update={order:"Confirmed"};
-        const url = `https://arcane-falls-38075.herokuapp.com/booking/${id}`;
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(update)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount > 0) {
-                    alert('Update Successful');
-                    window.location.reload(false)
-                }
-            })
-    }
+    
     return (
-        <div className=" border-2 border mb-5 p-5 gx-4">
-            <p> ID : {ProductId}</p>
-            <p> Name : {Productname}</p>
-            <p> Price : {Productprice}</p>
-            <p> Order : {order}</p>
+        <div className=" d-flex justify-content-center align-items-center flex-column border border-success mb-5 p-5 gx-4 userbooking rounded">
+            <h6> ID : {ProductId}</h6>
+            <h5> Name : {Productname}</h5>
+            <h6> Price : {Productprice}</h6>
+            <p className="text-danger"> Order : {order}</p>
             
-            <button onClick={()=>handleConfirm(_id)}>Confirm</button> 
-            <button onClick={() => handleBooking(_id)}>Cancel</button>
+            
+            <br /> 
+            <Button  variant="outline-danger" onClick={() => handleBooking(_id)}>Cancel</Button>
             
         </div>
     );

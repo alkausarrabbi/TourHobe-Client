@@ -29,9 +29,9 @@ function App() {
       <Route exact path="/home">
         <Home></Home>
       </Route>
-      <Route exact path="/home/packages/:id">
+      <PrivateRoute exact path="/home/packages/:id">
        <Details></Details>
-      </Route>
+      </PrivateRoute>
       <Route exact path="/login">
        <Login></Login>
       </Route>

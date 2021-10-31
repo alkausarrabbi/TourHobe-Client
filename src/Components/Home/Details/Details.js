@@ -68,13 +68,20 @@ const Details = () => {
                <h1 className="text-info">Book Now</h1>
                <div>
                <form onSubmit={handleBooking} action="" className="d-flex flex-column justify-content-center p-2">
-                   <input type="text" ref={nameRef}  value={user.displayName || " "} />
+                   <input  type="text" ref={nameRef}  value={user.displayName || " "} />
+                   <br />
                    <input type="email" ref={emailRef}  value={user.email || " "}/>
+                   <br />
                    <input type="text" ref={productNameRef}  value={detail.name || " "}/>
+                   <br />
                    <input type="text" ref={productIDRef}  value={detail._id || " "} />
+                   <br />
                    <input type="text" ref={ productPriceRef}  value={detail.price || " "}/>
-                   <input type="text" ref={addressRef}  name="Address" id="" placeholder="Address"/>
-                   <input type="number" ref={phoneRef}  name="number" id="" placeholder="Contact Number(+8801862555331)" />
+                   <br />
+                   <input type="text" ref={addressRef}  name="Address" id="" placeholder="Address" required />
+                   <br />
+                   <input type="number" ref={phoneRef}  name="number" id="" placeholder="Contact Number(+8801862555331)" required  />
+                   <br />
                   <input type="submit"  value="submit" />
                </form>
                </div>

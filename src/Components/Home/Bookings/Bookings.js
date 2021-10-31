@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Booking from '../Booking/Booking';
+import "./Bookings.css"
 
 const Bookings = () => {
     const [bookings,setBookings]=useState([]);
@@ -11,18 +12,19 @@ const Bookings = () => {
     return (
         <div className="container mt-5">
             <h1>All Users Booking list:</h1>
-            <h6>Total Booking : {bookings.length}</h6>
+            <h5 className="text-success">Total Booking : {bookings.length}</h5>
             <br />
-            
-                <table class="table">
+            <div className="table-responsive mb-5">
+
+            <table className="table table-striped ">
     <thead>
     <tr>
-      <th scope="col">ProductID</th>
-      <th scope="col">ProductName</th>
-      <th scope="col">UserName</th>
-      <th scope="col">UserEmail</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Status</th>
+      <th scope="col-sm-2">ProductID</th>
+      <th scope="col-sm-2">ProductName</th>
+      <th scope="col-sm-2">UserName</th>
+      <th scope="col-sm-2">UserEmail</th>
+      <th scope="col-sm-2">Phone</th>
+      <th scope="col-sm-2">Status</th>
     </tr>
   </thead>
   <tbody>
@@ -36,6 +38,8 @@ const Bookings = () => {
     
   </tbody>
 </table>
+            </div>
+                
                 </div>
             
     );
